@@ -8,3 +8,17 @@
 # for example flags and conditional statements.
 
 filename = "operators.pdf"
+extension = " "
+dot_found = False
+
+for char in filename:
+    if dot_found:
+        extension += char
+    if char == '.':
+        extension = "" 
+        dot_found = True
+
+if extension == "pdf":
+    print("This is a .pdf file")
+else:
+    print("This is NOT a .pdf file")
