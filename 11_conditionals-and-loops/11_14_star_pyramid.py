@@ -22,7 +22,7 @@
 # * * *
 #
 # HINT: Think of nested for loops!
-star = 8
+star = 5
 rep = 1
 for row in range(1,star + 1):
     print("*" * rep)
