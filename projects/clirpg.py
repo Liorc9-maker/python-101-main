@@ -19,3 +19,12 @@
 # If they have the sword from the other room, then they will be able to defeat it and win the game.
 
 # If they don't have the sword, then they will be eaten by the dragon and lose the game.
+player = input("Please type your name: ")
+print(f"Hello {player}. \nWelcome to the game world!")
+door = input("choose between the left or the right door. \nType right/left: ")
+left = False
+right = True
+while door == False:
+    left_door_coise = input("You see an empty room. Type return/look around: ")
+    if left_door_coise == "look around":
+        print("You look around the empty room and find a dusty sword")
