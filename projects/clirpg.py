@@ -46,22 +46,14 @@ while door == "left":
                 sword_choise = (input("Take the sworr or leave is? \nType yes/no: ").lower())
                 if sword_choise == "yes":
                         print("You returned and entered the right door \nYou see a dragon in the room.")
-                        dragon_choise = (input("Fight the dragon or return \nType fighe/return: ").lower())
+                        dragon_choise = (input("Fight the dragon or return \nType fight/return: ").lower())
                         if dragon_choise == "fight":
                                 print("You won!!!")
-                                break
-                        else:
-                            if dragon_choise == "return":
-                                print("star over")
-                                break        
-                else:
-                    if sword_choise == "no":
-                        print("start over")
-                        break    
+                                break    
 else: 
     while door == "right":
         print("You returned and entered the right door \nYou see a dragon in the room.")
-        dragon_choise = input("Fight the dragon or return \nType fighe/return: ")
+        dragon_choise = input("Fight the dragon or return \nType fight/return: ")
         if dragon_choise == "fight":
              print("You've been eaten by the dragon! \nYou lost.") 
              break
@@ -74,7 +66,7 @@ else:
                     sword_choise = (input("Take the sword or leave it? \nType yes/no: ").lower())
                     if sword_choise == "yes":
                         print("You returned and entered the right door \nYou see a dragon in the room.")
-                        dragon_choise = (input("Fight the dragon or return \nType fighe/return: ").lower())
+                        dragon_choise = (input("Fight the dragon or return \nType fight/return: ").lower())
                         if dragon_choise == "fight":
                             print("You won!!!")
                         break
@@ -86,10 +78,7 @@ else:
                             dragon_choise = (input("Fight the dragon or return \nType fighe/return: ").lower())
                             if dragon_choise == "fight":
                                 print("You Won!")
-                                break
-                            else:
-                                print("Start over!")
-                                break
+                                break                      
          
             
            
