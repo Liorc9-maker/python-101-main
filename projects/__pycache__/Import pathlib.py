@@ -1,13 +1,15 @@
 # Import pathlib
-# Find the path to my Desktop
-# List all the files on there
-# Filter for screenshots only
-# Create a new folder
-# Move the screenshots in there
 import pathlib
+# Find the path to my Desktop
+desktop = pathlib.Path('/Users/liorc/Desktop')
+# Create a new folder
+new_path = pathlib.Path('/Users/liorc/Desktop/screenshots')
+new_path.mkdir(exist_ok=True)
 
-path = pathlib.Path.cwd("user\liorc\desktop")  # Returns the path of your current working directory
-str(path)
-for filepath in path.iterdir():
-
-    print(filepath)
+for filepath in desktop.iterdir():
+# Filter for screenshots only
+    if filepath.suffix == '.png':
+        # Create a new path for each file
+        new_filepath = new_path.joinpath(filepath.name)
+        # Move the screenshots in there
+        filepath.replace(new_filepath)
