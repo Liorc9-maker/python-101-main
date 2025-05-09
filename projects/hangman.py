@@ -23,8 +23,3 @@
 # Display a winning message and the full word if they win
 
 # Display a losing message and quit the game if they don't make it
-word = "hello"
-line_h = word.replace(word.index(0,-1),"_")
-print(line_h)
-
-#guess = input("Please ")
