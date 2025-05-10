@@ -23,3 +23,49 @@
 # Display a winning message and the full word if they win
 
 # Display a losing message and quit the game if they don't make it
+
+# Hard-coded word to guess
+import random
+words_list = ["pathlib", "random", "github", "syntaxerror", "python", "git init"]
+word_to_guess = random.choice(words_list)
+word_display = [' ' if char == ' ' else '_' for char in word_to_guess]
+guessed_letters = set()
+attempts_remaining = 6
+
+# Game introduction
+print("Welcome to Hangman!")
+print("Try to guess the word, one letter at a time.")
+print(f"You have {attempts_remaining} attempts.")
+print(" ".join(word_display))
+
+# Game loop
+while attempts_remaining > 0 and '_' in word_display:
+    guess = input("Enter a letter: ").lower()
+
+    # Validate input without using string module
+    if len(guess) != 1 or not guess.isalpha():
+        print("Please enter a single alphabetical character.")
+        continue
+
+    if guess in guessed_letters:
+        print("You've already guessed that letter. Try a different one.")
+        continue
+
+    guessed_letters.add(guess)
+
+    if guess in word_to_guess:
+        print(f"Good job! '{guess}' is in the word.")
+        for idx, char in enumerate(word_to_guess):
+            if char == guess:
+                word_display[idx] = guess
+    else:
+        attempts_remaining -= 1
+        print(f"Sorry, '{guess}' is not in the word. Attempts left: {attempts_remaining}")
+
+    print("Current word: " + " ".join(word_display))
+
+# End of game messages
+if '_' not in word_display:
+    print(f"Congratulations! You guessed the word: '{word_to_guess}'")
+else:
+    print(f"Game over! The word was: '{word_to_guess}'")
